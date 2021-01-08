@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fruit-service-pod
+spec:
+  containers:
+  - name: fruit-service-legacy
+    image: linuxacademycontent/legacy-fruit-service:1
+  - name: fruit-service-ambassador
+    image: haproxy:1.7
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: haproxy-config-vol
+      mountPath: /usr/local/etc/haproxy
+  volumes:
+  - name: haproxy-config-vol
+    configMap:
+      name: fruit-service-ambassador-config

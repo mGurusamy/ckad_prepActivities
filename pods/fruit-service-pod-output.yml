@@ -1,0 +1,111 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"v1","kind":"Pod","metadata":{"annotations":{},"name":"fruit-service-pod","namespace":"default"},"spec":{"containers":[{"image":"linuxacademycontent/legacy-fruit-service:1","name":"fruit-service-legacy"},{"image":"haproxy:1.7","name":"fruit-service-ambassador","ports":[{"containerPort":80}],"volumeMounts":[{"mountPath":"/usr/local/etc/haproxy","name":"haproxy-config-vol"}]}],"volumes":[{"configMap":{"name":"fruit-service-ambassador-config"},"name":"haproxy-config-vol"}]}}
+  creationTimestamp: "2021-01-08T23:15:45Z"
+  name: fruit-service-pod
+  namespace: default
+  resourceVersion: "185494"
+  selfLink: /api/v1/namespaces/default/pods/fruit-service-pod
+  uid: 7fc27112-bef3-48c9-afa4-6dbcd5d5aea0
+spec:
+  containers:
+  - image: linuxacademycontent/legacy-fruit-service:1
+    imagePullPolicy: IfNotPresent
+    name: fruit-service-legacy
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-48tf9
+      readOnly: true
+  - image: haproxy:1.7
+    imagePullPolicy: IfNotPresent
+    name: fruit-service-ambassador
+    ports:
+    - containerPort: 80
+      protocol: TCP
+    resources: {}
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /usr/local/etc/haproxy
+      name: haproxy-config-vol
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: default-token-48tf9
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: 9d0c92b4861c.mylabserver.com
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext: {}
+  serviceAccount: default
+  serviceAccountName: default
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - configMap:
+      defaultMode: 420
+      name: fruit-service-ambassador-config
+    name: haproxy-config-vol
+  - name: default-token-48tf9
+    secret:
+      defaultMode: 420
+      secretName: default-token-48tf9
+status:
+  conditions:
+  - lastProbeTime: null
+    lastTransitionTime: "2021-01-08T23:15:44Z"
+    status: "True"
+    type: Initialized
+  - lastProbeTime: null
+    lastTransitionTime: "2021-01-08T23:16:00Z"
+    status: "True"
+    type: Ready
+  - lastProbeTime: null
+    lastTransitionTime: "2021-01-08T23:16:00Z"
+    status: "True"
+    type: ContainersReady
+  - lastProbeTime: null
+    lastTransitionTime: "2021-01-08T23:15:45Z"
+    status: "True"
+    type: PodScheduled
+  containerStatuses:
+  - containerID: docker://ef5cbed8c40747ad81b67dad0c643d457d58d52941bf8f4268212a18e1676c36
+    image: haproxy:1.7
+    imageID: docker-pullable://haproxy@sha256:c958006a00d759996472218df80a33d71a62bfe54b2554c487763cb9b07ee0de
+    lastState: {}
+    name: fruit-service-ambassador
+    ready: true
+    restartCount: 0
+    state:
+      running:
+        startedAt: "2021-01-08T23:15:59Z"
+  - containerID: docker://a91a94747afee43792168dc8c84feecc3e0045b5a6752f351d7d8035657abb5d
+    image: linuxacademycontent/legacy-fruit-service:1
+    imageID: docker-pullable://linuxacademycontent/legacy-fruit-service@sha256:207ac67a8c26b619fdd591e7dc504541e4f026f1975626b16b525e65d34e8347
+    lastState: {}
+    name: fruit-service-legacy
+    ready: true
+    restartCount: 0
+    state:
+      running:
+        startedAt: "2021-01-08T23:15:56Z"
+  hostIP: 172.31.120.153
+  phase: Running
+  podIP: 10.244.1.26
+  qosClass: BestEffort
+  startTime: "2021-01-08T23:15:44Z"

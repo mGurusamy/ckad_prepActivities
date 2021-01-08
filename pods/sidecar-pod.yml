@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: sidecar-pod
+  namespace: ckad
+  labels:
+    app: sidecar-pod
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    ports:
+    - containerPort: 80
+  - name: busybox
+    image: busybox
+    command: ["sh", "-c", "while true; do sleep 30; done;"]
