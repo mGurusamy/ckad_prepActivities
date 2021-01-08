@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: resource-limit-pod
+  namespace: ckad
+  labels:
+    app: resource-limit-pod
+spec:
+  containers:
+  - name: resource-limit-pod
+    image: busybox
+    command: ["sh", "-c", "echo Hello Containers! Your resources are limited && sleep 3600"]
+    resources:
+      requests:
+        memory: "64Mi"
+        cpu: "250m"
+      limits:
+        memory: "128Mi"
+        cpu: "500m"
