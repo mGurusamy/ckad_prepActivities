@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: livenessprobe-pod
+spec:
+  containers:
+  - name: livenessprobe-pod
+    image: busybox
+    command: ["sh","-c","echo Hello Liveness prbe && sleep 3600"]
+    livenessProbe:
+      initialDelaySeconds: 5
+      periodSeconds: 5
+      exec:
+        command:  
+        - echo
+        - testing
