@@ -1,0 +1,33 @@
+[?2004h[?1049h[22;0;0t[?1h=[?2004h[1;51r[?12h[?12l[27m[23m[29m[m[H[2J[?25l[51;1H"/tmp/kubectl-edit-lhwfa.yaml" 72L, 2402C[1;1H[34m# Please edit the object below. Lines beginning with a '#' will be ignored,
+# and an empty file will abort the edit. If an error occurs while saving this file will be
+# reopened with the relevant failures.
+#[m
+[36mapiVersion[m[35m:[m extensions/v1beta1
+[36mkind[m[35m:[m Deployment
+[36mmetadata[m[35m:[m
+  [36mannotations[m[35m:[m
+    [36mdeployment.kubernetes.io/revision[m[35m:[m [31m"3"[m
+    [36mkubectl.kubernetes.io/last-applied-configuration[m[35m:[m |[11;7H[35m{[m[31m"apiVersion"[m[35m:[m[31m"apps/v1"[m,[31m"kind"[m[35m:[m[31m"Deployment"[m,[31m"metadata"[m[35m:{[m[31m"annotations"[m[35m:{}[m,[31m"name"[m[35m:[m[31m"rolling-update-deployment"[m,[31m"namespace"[m[35m:[m[31m"default"[m[35m}[m,[31m"spec"[m[35m:{[m[31m"replicas"[m[35m:[m4,[31m"selector"[m[35m:{[m[31m"matchLabels"[m[35m:{[m[31m"app"[m[35m:[m[31m"nginx"[m[35m}}[m,[31m"template"[m[35m:{[m[31m"metadata"[m[35m:{[m[31m"labels"[m[35m:{[m[31m"app[12;1Hp"[m[35m:[m[31m"nginx"[m[35m}}[m,[31m"spec"[m[35m:{[m[31m"containers"[m[35m:[{[m[31m"image"[m[35m:[m[31m"nginx:1.7.1"[m,[31m"name"[m[35m:[m[31m"nginx"[m,[31m"ports"[m[35m:[{[m[31m"containerPort"[m[35m:[m80[35m}]}]}}}}[m
+  [36mcreationTimestamp[m[35m:[m [31m"2021-01-11T17:42:58Z"[m
+  [36mgeneration[m[35m:[m [31m3[m
+  [36mlabels[m[35m:[m
+    [36mapp[m[35m:[m nginx
+  [36mname[m[35m:[m rolling-update-deployment
+  [36mnamespace[m[35m:[m default
+  [36mresourceVersion[m[35m:[m [31m"303907"[m
+  [36mselfLink[m[35m:[m /apis/extensions/v1beta1/namespaces/default/deployments/rolling-update-deployment
+  [36muid[m[35m:[m 081e87d0-f969-4824-99d4-0a5bd475e0e7
+[36mspec[m[35m:[m
+  [36mprogressDeadlineSeconds[m[35m:[m [31m600[m
+  [36mreplicas[m[35m:[m [31m4[m
+  [36mrevisionHistoryLimit[m[35m:[m [31m10[m
+  [36mselector[m[35m:[m
+    [36mmatchLabels[m[35m:[m[28;7H[36mapp[m[35m:[m nginx
+  [36mstrategy[m[35m:[m
+    [36mrollingUpdate[m[35m:[m[31;7H[36mmaxSurge[m[35m:[m 25%[32;7H[36mmaxUnavailable[m[35m:[m 25%
+    [36mtype[m[35m:[m RollingUpdate
+  [36mtemplate[m[35m:[m
+    [36mmetadata[m[35m:[m[36;7H[36mcreationTimestamp[m[35m:[m [31mnull[m[37;7H[36mlabels[m[35m:[m[38;9H[36mapp[m[35m:[m nginx
+    [36mspec[m[35m:[m[40;7H[36mcontainers[m[35m:[m[41;7H[38;5;130m- [m[36mimage[m[35m:[m nginx:1.7.1[42;9H[36mimagePullPolicy[m[35m:[m IfNotPresent[43;9H[36mname[m[35m:[m nginx[44;9H[36mports[m[35m:[m[45;9H[38;5;130m- [m[36mcontainerPort[m[35m:[m [31m80[m[46;11H[36mprotocol[m[35m:[m TCP[47;9H[36mresources[m[35m:[m [35m{}[m[48;9H[36mterminationMessagePath[m[35m:[m /dev/termination-log[49;9H[36mterminationMessagePolicy[m[35m:[m File[50;7H[36mdnsPolicy[m[35m:[m ClusterFirst[51;221H1,1[11CTop[1;1H[?25h[?25l[51;1HType  :qa!  and press <Enter> to abandon all changes and exit Vim[51;221H[K[51;221H1,1[11CTop[1;1H[?25h[?25l[51;221H[K[51;221H1,1[11CTop[1;1H[?25h[?25l[51;221H[K[51;221H1,1[11CTop[1;1H[?25h[?25l[51;221H[K[51;221H1,1[11CTop[1;1H[?25h[?25l[51;221H[K[51;221H1,1[11CTop[1;1H[?25h[?25l[51;221H[K[51;221H1,1[11CTop[1;1H[?25h[?25l[51;221H[K[51;221H1,1[11CTop[1;1H[?25h[?25l[51;221H[K[51;221H1,1[11CTop[1;1H[?25h[?25l[51;221H[K[51;221H1,1[11CTop[1;1H[?25h[?25l[51;221H[K[51;221H1,1[11CTop[1;1H[?25h[?25l[51;221H2[2;1H[?25h[?25l[51;221H3[3;1H[?25h[?25l[51;221H4[4;1H[?25h[?25l[51;221H5[5;1H[?25h[?25l[51;221H6[6;1H[?25h[?25l[51;221H7[7;1H[?25h[51;1H[?2004l[?1l>[?1049l[23;0;0tVim: Caught deadly signal HUP
+Vim: Finished.
+[51;1H
