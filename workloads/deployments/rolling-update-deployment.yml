@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: rolling-update-deployment
+  annotations:
+    fluxcd.io/tag.nginx: semver:~1.0
+    fluxcd.io/automated: "true"
 spec:
   replicas: 4
   selector:
